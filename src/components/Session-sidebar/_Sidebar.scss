@@ -2,4 +2,9 @@
     min-height: 100%;
     width: 15vw;
     background: black;
+    ul {
+        display: flex;
+        flex-direction: column;
+        line-height: 20px;
+    }
 }

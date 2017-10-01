@@ -9,6 +9,7 @@ const express = require('express')
     , axios = require('axios')
     , passport = require('passport')
     , Auth0Strategy = require('passport-auth0')
+    , controller = require('./controller/apiController')
 
 app.set('port', process.env.PORT || 3040)
 app.use(bodyParser.json())
@@ -33,7 +34,7 @@ passport.use(new Auth0Strategy({
     domain: process.env.DOMAIN,
     clientID: process.env.CLIENTID,
     clientSecret: process.env.CLIENTSECRET,
-    callbackURL: '/auth/callback'
+    callbackURL: process.env.CALLBACK
 },
 function (accessToken, refreshToken, extraParams, profile, done) {
     let db = app.get('db');
@@ -64,16 +65,20 @@ passport.deserializeUser(function(user, done) {
     done(null, user)
 })
 
-app.get('/api/login', passport.authenticate('auth0'));
-
-app.get('/auth/callback', passport.authenticate('auth0', {
+app.get('/api/login', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/profile',
     failureRedirect: '/'
-}),
-function (req, res) {
-    res.status(200).send(req.user);
-});
+}));
 
+app.get('/api/getquizzes/:id', (req, res, next) => {
+    console.log(req.params.id);
+    switch(req.params.id) {
+        case 'CSS':
+            controller.getCss();
+            break;
+
+    }
+})
 
 
 
