@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Flashcard from '../Flashcard/Flashcard';
 import axios from 'axios';
 
 
@@ -26,7 +27,8 @@ export default class Flashcards extends Component {
         
         return(
             <div className="flashcard-container">
-                {this.state.currentCard.term}
+
+                <Flashcard currentCard={this.state.currentCard}/>
             </div>
         )
     }

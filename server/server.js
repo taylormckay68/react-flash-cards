@@ -71,10 +71,10 @@ app.get('/api/login', passport.authenticate('auth0', {
 }));
 
 app.get('/api/getquizzes/:id', (req, res, next) => {
-    console.log(req.params.id);
+    // console.log(req.session);
     switch(req.params.id) {
         case 'CSS':
-            controller.getCss();
+            controller.getCss(req, res, next);
             break;
 
     }

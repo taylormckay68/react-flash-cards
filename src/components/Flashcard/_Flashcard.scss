@@ -1,0 +1,23 @@
+.card {
+    height: 200px;
+    width: 200px;
+    background: blue;
+}
+
+.right {
+    background: $blue;
+    color: white;
+    font-size: 32px;
+    font-weight: bolder;
+    height: 50px;
+    width: 50px;
+}
+
+.wrong {
+    background: $blue;
+    color: white;
+    font-size: 32px;
+    font-weight: bolder;
+    height: 50px;
+    width: 50px;
+}
