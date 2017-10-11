@@ -26,7 +26,7 @@ export default class Flashcards extends Component {
     render() {
         
         return(
-            <div className="flashcard-container">
+            <div className="flashcard-wrapper">
 
                 <Flashcard currentCard={this.state.currentCard}/>
             </div>

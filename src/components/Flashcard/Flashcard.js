@@ -9,12 +9,14 @@ export default class Flashcard extends Component {
 
     render() {
         return(
-            <div>
+            <div className="flashcard-container">
                 <div className="card">
                     {this.props.currentCard.term}
                 </div>
-                <button className="wrong">&times;</button>
-                <button className="right">&#x02713;</button>
+                <div className="right-wrong-container">
+                    <button className="wrong">&times;</button>
+                    <button className="right">&#x02713;</button>
+                </div>
             </div>
         )
     }
