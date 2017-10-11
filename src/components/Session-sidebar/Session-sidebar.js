@@ -6,6 +6,7 @@ export default class Sidebar extends Component {
         return(
             <div className="sidebar_container">
                 <ul>
+                    <Link to='/flash-cards/JSAll'>JavaScript All</Link>
                     <Link to='/flash-cards/JSBasic'>JavaScript Basic</Link>
                     <Link to='/flash-cards/JSAdvanced'>JavaScript Advanced</Link>
                     <Link to='/flash-cards/React'>React</Link>

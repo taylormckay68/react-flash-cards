@@ -76,6 +76,21 @@ app.get('/api/getquizzes/:id', (req, res, next) => {
         case 'CSS':
             controller.getCss(req, res, next);
             break;
+        case 'HTML':
+            controller.getHtml(req, res, next);
+            break;
+        case 'JSBasic':
+            controller.getJSBasic(req, res, next);
+            break;
+        case 'JSAdvanced':
+            controller.getJSAdvanced(req, res, next);
+            break;
+        case 'JSAll':
+            controller.getJSAll(req, res, next);
+            break;
+        case 'React':
+            controller.getReact(req, res, next);
+            break;
 
     }
 })
