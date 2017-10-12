@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Flashcard from '../Flashcard/Flashcard';
+import Instructions from '../Instructions/Instructions';
 import axios from 'axios';
 
 
@@ -8,8 +9,10 @@ export default class Flashcards extends Component {
         super();
         this.state = {
             currentCard: {},
-            setLength: ''
+            setLength: '',
+            instructions: true
         }
+        this.handleStartClick = this.handleStartClick.bind(this);
     }
 
     componentDidMount() {
@@ -20,15 +23,20 @@ export default class Flashcards extends Component {
                 currentCard: response.data.firstCard,
                 setLength: response.data.length
             })
-
         })
     }
+    handleStartClick() {
+        this.setState({
+            instructions: false
+        })
+    }
+
     render() {
         
         return(
             <div className="flashcard-wrapper">
-
-                <Flashcard currentCard={this.state.currentCard}/>
+                {this.state.instructions ? <Instructions handleStartClick={this.handleStartClick} /> : <Flashcard currentCard={this.state.currentCard}/>}
+                
             </div>
         )
     }

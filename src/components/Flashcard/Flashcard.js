@@ -28,7 +28,6 @@ export default class Flashcard extends Component {
                 <div className="right-wrong-container">
                     <RaisedButton style={style} buttonStyle={styleIncorrect}>Incorrect</RaisedButton>
                     <RaisedButton buttonStyle={styleCorrect}>Correct</RaisedButton>
-                    {/* <RaisedButton label="Default" /> */}
                 </div>
             </div>
         )
